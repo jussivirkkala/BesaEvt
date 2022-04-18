@@ -188,19 +188,6 @@ static void besaWrite(string f, DateTime start)
 
 }
 
-// Find certain element
-static string Entry(XmlDocument doc, string header, string group)
-{
-    string r = "";
-    XmlNodeList elemList = doc.GetElementsByTagName("a:" + header);   
-    for (int i = 0; i < elemList.Count; i++)
-    { 
-        if (elemList[i].ParentNode.Name.Equals(group))
-            r += Line(header + ": " + elemList[i].InnerXml);
-    }
-    return r;
-}
-
 // Display line
 static string Line(string s)
 {
