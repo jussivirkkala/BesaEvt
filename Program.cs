@@ -1,6 +1,6 @@
 ﻿/* Creating -Besa2.evt based on Brain Quick .evt and -Besa1.evt 
  * @jussivirkkala
- * 2022-04-17 v1.0.2 Clean code. Link to github, cheackin EXT_ and start time .000  
+ * 2022-04-18 v1.0.2 Clean code. Link to github, cheackin EXT_ and start time .000  
  * 2022-04-14 v1.0.1 Final pause. 
  * 2022-04-13 v1.0.0 First version based on keegz. 
  * 
