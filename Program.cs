@@ -9,7 +9,6 @@
 
 using System;
 using System.Xml;
-using System.IO.Compression;
 using System.IO;
 using System.Diagnostics;
 using System.Reflection;
