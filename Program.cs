@@ -60,7 +60,6 @@ if (start==new DateTime(0))
 
 // Write
 besaWrite(f,start);
-
 //  Line("Completed");
 End();
 
@@ -104,8 +103,8 @@ static DateTime besaStart(string f)
         End();
         return start;
     }
-    // Problem with Besa 7.1.2.1 time 2021-11-11T22:36:6.000
-    
+
+    // Problem with Besa 7.1.2.1 time 2021-11-11T22:36:6.000    
     if (sub[6].Length==22)
         sub[6]=sub[6].Insert(17,"0");
     if (DateTime.TryParse(sub[6], culture, DateTimeStyles.None, out start))
@@ -141,7 +140,7 @@ static void besaWrite(string f, DateTime start)
         doc.LoadXml(s);
         XmlNodeList elemList = doc.GetElementsByTagName("Event");   
 
-            string type="";
+        string type="";
         foreach (XmlNode elem in elemList)
         {
             DateTime time1=new DateTime(0);
