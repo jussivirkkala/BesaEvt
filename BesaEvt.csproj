@@ -3,9 +3,9 @@
     <OutputType>Exe</OutputType>
     <TargetFramework>net7.0</TargetFramework>
     <Authors></Authors>
-    <FileVersion>1.0.e</FileVersion>
+    <FileVersion>1.0.3</FileVersion>
     <Copyright>@jussivirkkala</Copyright>
-    <Version>1.0.e</Version>
+    <Version>1.0.3</Version>
     <Company />
     <Product>Creating Besa .evt based on Brain quick .evt and -Besa1.evt</Product>
     <Description></Description>
