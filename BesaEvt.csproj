@@ -1,15 +1,13 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net7.0</TargetFramework>
     <Authors></Authors>
-    <FileVersion>1.0.2</FileVersion>
+    <FileVersion>1.0.e</FileVersion>
     <Copyright>@jussivirkkala</Copyright>
-    <Version>1.0.0</Version>
+    <Version>1.0.e</Version>
     <Company />
     <Product>Creating Besa .evt based on Brain quick .evt and -Besa1.evt</Product>
     <Description></Description>
   </PropertyGroup>
-
 </Project>
