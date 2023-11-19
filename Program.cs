@@ -6,6 +6,8 @@
  * 2022-04-13 v1.0.0 First version based on keegz. 
  * 
  * dotnet publish -r win-x64 -c Release --self-contained true -p:PublishSingleFile=true -p:IncludeAllContentForSelfExtract=true
+ * 
+ * dotnet publish -r win-x64 -c Release --self-contained true 
  */
 
 using System;
@@ -15,10 +17,10 @@ using System.Diagnostics;
 using System.Reflection;
 using System.Globalization; // Time
 
-
-Line("Creating -Besa2.evt based on Brain Quick .evt and -Besa1.evt v" +
-    FileVersionInfo.GetVersionInfo(System.AppContext.BaseDirectory).FileVersion +
-    //    FileVersionInfo.GetVersionInfo(Assembly.GetExecutingAssembly().Location).FileVersion + // For AOT
+Line("Creating -Besa2.evt based on Brain Quick.evt and -Besa1.evt v1.0.4" +
+    // System.Diagnostics.FileVersionInfo.GetVersionInfo(System.AppContext.BaseDirectory).FileVersion + 
+    // FileVersionInfo.GetVersionInfo(System.AppContext.BaseDirectory).FileVersion +
+    // FileVersionInfo.GetVersionInfo(Assembly.GetExecutingAssembly().Location).FileVersion + // For AOT
     "\ngithub.com/jussivirkkala/BesaEvt");
 if (args.Length!=1)
 {
