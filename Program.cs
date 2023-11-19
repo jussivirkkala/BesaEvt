@@ -1,5 +1,6 @@
 ﻿/* Creating -Besa2.evt based on Brain Quick .evt and -Besa1.evt 
  * @jussivirkkala
+ * 2023-11-19 v1.0.4 Changed to .NET8 and AOT.
  * 2022-04-18 v1.0.2 Clean code. Link to github, checking EXT_ and start time .000  
  * 2022-04-14 v1.0.1 Final pause. 
  * 2022-04-13 v1.0.0 First version based on keegz. 
@@ -15,8 +16,9 @@ using System.Reflection;
 using System.Globalization; // Time
 
 
-Line("Creating -Besa2.evt based on Brain Quick .evt and -Besa1.evt v" + 
-    FileVersionInfo.GetVersionInfo(Assembly.GetExecutingAssembly().Location).FileVersion +
+Line("Creating -Besa2.evt based on Brain Quick .evt and -Besa1.evt v" +
+    FileVersionInfo.GetVersionInfo(System.AppContext.BaseDirectory).FileVersion +
+    //    FileVersionInfo.GetVersionInfo(Assembly.GetExecutingAssembly().Location).FileVersion + // For AOT
     "\ngithub.com/jussivirkkala/BesaEvt");
 if (args.Length!=1)
 {
@@ -78,10 +80,6 @@ static DateTime besaStart(string f)
     CultureInfo culture = CultureInfo.InvariantCulture;
     string s=File.ReadAllText(f);
     string[] sub = s.Split('\t',StringSplitOptions.TrimEntries);
-    foreach (var ss in sub)
-    {
-    //    Console.WriteLine($"Substring: {ss}");
-    }
 
     if (sub.Length<6) 
     {
@@ -106,7 +104,10 @@ static DateTime besaStart(string f)
 
     // Problem with Besa 7.1.2.1 time 2021-11-11T22:36:6.000    
     if (sub[6].Length==22)
-        sub[6]=sub[6].Insert(17,"0");
+    {
+        Line($"Correcting time [sub[6]");
+        sub[6] = sub[6].Insert(17, "0");
+    }
     if (DateTime.TryParse(sub[6], culture, DateTimeStyles.None, out start))
     {
         Line("File start event: "+start.ToString("o"));
@@ -127,7 +128,6 @@ static DateTime besaStart(string f)
 // Write besa Event
 static void besaWrite(string f, DateTime start)
 {
-
     // Header for -
     string r="Tmu\tCode\tTriNo\tComnt\tVer-C\r\n";
     CultureInfo culture = CultureInfo.InvariantCulture;
@@ -149,7 +149,6 @@ static void besaWrite(string f, DateTime start)
             foreach (XmlNode child in elem.ChildNodes)
             {
                 string t=child.InnerText;
-
                 switch(child.Name) 
                 {
                 case "Begin":
@@ -183,7 +182,6 @@ static void besaWrite(string f, DateTime start)
         Line($"Error parsing Brain Quick {f}.evt");
         return;
     }
-
 }
 
 // Display line
