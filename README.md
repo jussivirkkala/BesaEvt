@@ -5,7 +5,7 @@ Creating -Besa2.evt based on Micromed Brain Quick .evt (xml) file together with 
 
 ![BesaEvt console output](BesaEvt1.png)
 
-Build .NET8 SDK (www.dot.net) into single win-x64 exe with following command.
+Build .NET8 SDK (www.dot.net) into single win-x64 exe with following command. Uses AOT for smaller file size.
 ```
 dotnet publish -r win-x64 -c Release --self-contained true 
 ``` 
